@@ -2,5 +2,39 @@
 @import 'globals';
 
 body {
-  background-color: $favColor !important;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(172,236,79,1) 0%, rgba(177,199,177,1) 47%);
+}
+
+figure {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  border: black;
+  border-radius: 3px;
+
+  figcaption {
+    position: absolute;
+    bottom: 20rem;
+    margin: 0 2rem;
+    color: white;
+  }
+}
+
+.project-card-container {
+  display: flex;
+  flex-wrap: row wrap;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.605);
+
+  .project-cards {
+    margin: 10px;
+    text-align: center;
+    background: rgba(246, 246, 247, 0.653);
+    width: 200px;
+  }
+}
+
+.tech-n-projects {
+  color: white;
 }

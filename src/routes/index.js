@@ -9,6 +9,9 @@ import CreatePortal from '../views/CreatePortal';
 import CreateTech from '../views/CreateTech';
 import Edit from '../views/Edit';
 import TechUpdate from '../views/TechUpdate';
+// import ProjectForm from '../components/ProjectForm';
+import EditForm from '../views/EditForm';
+import TechEditForm from '../views/TechEditForm';
 
 export default function Router({ user }) {
   return (
@@ -30,6 +33,16 @@ export default function Router({ user }) {
           exact
           path="/editProjects"
           component={() => <Edit user={user} />}
+        />
+        <Route
+          exact
+          path="/editProject/:fbKey"
+          component={() => <EditForm user={user} />}
+        />
+        <Route
+          exact
+          path="/editTech/:fbKey"
+          component={() => <TechEditForm user={user} />}
         />
         <Route
           exact

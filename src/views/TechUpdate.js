@@ -28,6 +28,7 @@ export default function TechUpdate({ user }) {
                     key={technolo.firebaseKey}
                     technolo={technolo}
                     user={user}
+                    setTech={setTech}
                   />
                 ))}
               </div>

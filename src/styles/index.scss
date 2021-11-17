@@ -1,39 +1,75 @@
 @import '~@fortawesome/fontawesome-free/css/all.min.css';
 @import 'globals';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
 
 body {
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(172,236,79,1) 0%, rgba(177,199,177,1) 47%);
+  background-image: url('https://www.imgonline.com.ua/result_img/imgonline-com-ua-TextureSeamless-ZDJVlScPjsnuks.jpg');
+  background-size: cover;
+  background-repeat: repeat;
 }
 
-figure {
-  display: grid;
+.about-me {
+  display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
+  background-color: rgba(250, 171, 248, 0.632);
+  font-family: 'Titillium Web', sans-serif;
 
-  figcaption {
-    position: absolute;
-    bottom: 20rem;
-    margin: 0 2rem;
-    color: white;
-  }
+   .bio {
+     text-align: left;
+   }
 }
 
-.project-card-container {
+.container {
   display: flex;
-  flex-wrap: row wrap;
   color: black;
-  background-color: rgba(255, 255, 255, 0.605);
   justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  background-image: url('https://www.macmillandictionary.com/external/slideshow/full/White_full.png');
+  background-size: cover;
+  background-repeat: repeat;
+  margin-bottom: 50px;
   
   .project-cards {
     margin: 10px;
     text-align: center;
-    background: rgba(246, 246, 247, 0.653);
+    background: rgba(179, 244, 198, 0.653);
     width: 200px;
+    height: 200px;
+    font-family: 'Oswald', sans-serif;
+    -webkit-text-stroke: 1px white;
   }
 }
 
 .tech-n-projects {
-  color: white;
+  font-family: 'Oswald', sans-serif;
+  -webkit-text-stroke: 1px white;
+  color: #344330;
+  text-align: center;
+  background-color: rgba(191, 252, 173, 0.577);
 }
+
+.flex-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.img-fluid {
+  width: 300px;
+}
+
+  .navbar {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(236, 255, 198);
+    font-family: 'Roboto', sans-serif;
+
+    .navColor {
+      margin-left: 5px;
+      font-family: 'Oswald', sans-serif;
+      -webkit-text-stroke: 1px white;
+    }
+  }

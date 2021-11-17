@@ -6,7 +6,7 @@ import { signInUser, signOutUser } from '../api/auth';
 function Navigation({ user }) {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light bg-transparent">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
             Gabriels Personal Bio

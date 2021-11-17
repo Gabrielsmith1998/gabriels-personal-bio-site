@@ -4,9 +4,10 @@ import { Card, Container } from 'reactstrap';
 
 export default function Project({ obj }) {
   return (
-    <div>
-      <Container className="project-card-container">
+    <div className="project-card-container">
+      <Container>
         <Card className="project-cards">
+          <img src={obj.projectImg} alt="github project" />
           <p>{obj.projectName}</p>
           <p>{obj.projectDescription}</p>
           <a href={obj.projectLink} target="_blank" rel="noreferrer noopener">

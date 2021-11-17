@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import firebase from 'firebase/app';
 import 'firebase/auth';
-import Navigation from '../components/Navbar';
 import Router from '../routes';
+import NavTwo from '../components/NavTwo';
 
 function Initialize() {
   const [user, setUser] = useState(null);
@@ -26,7 +26,7 @@ function Initialize() {
 
   return (
     <div>
-      <Navigation user={user} />
+      <NavTwo user={user} />
       <Router user={user} />
     </div>
   );

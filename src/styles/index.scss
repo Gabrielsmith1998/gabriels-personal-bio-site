@@ -10,8 +10,6 @@ figure {
   display: grid;
   align-items: center;
   justify-content: center;
-  border: black;
-  border-radius: 3px;
 
   figcaption {
     position: absolute;
@@ -26,7 +24,8 @@ figure {
   flex-wrap: row wrap;
   color: black;
   background-color: rgba(255, 255, 255, 0.605);
-
+  justify-content: center;
+  
   .project-cards {
     margin: 10px;
     text-align: center;

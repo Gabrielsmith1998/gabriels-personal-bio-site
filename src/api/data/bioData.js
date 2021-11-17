@@ -24,6 +24,27 @@ const createProject = (obj) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const getSingleProject = (fbKey) => new Promise((resolve, reject) => {
+  axios
+    .get(`${baseURL}/projects/${fbKey}.json`)
+    .then((response) => resolve(response.data))
+    .catch(reject);
+});
+
+const updateProject = (updateObj) => new Promise((resolve, reject) => {
+  axios
+    .patch(`${baseURL}/projects/${updateObj.firebaseKey}.json`, updateObj)
+    .then(() => getProjects().then(resolve))
+    .catch(reject);
+});
+
+const deleteProject = (fbKey) => new Promise((resolve, reject) => {
+  axios
+    .delete(`${baseURL}/projects/${fbKey}.json`)
+    .then(() => getProjects().then(resolve))
+    .catch(reject);
+});
+
 const getTech = () => new Promise((resolve, reject) => {
   axios
     .get(`${baseURL}/tech.json`)
@@ -45,6 +66,36 @@ const createTech = (obj) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const getSingleTech = (fbKey) => new Promise((resolve, reject) => {
+  axios
+    .get(`${baseURL}/tech/${fbKey}.json`)
+    .then((response) => resolve(response.data))
+    .catch(reject);
+});
+
+const updateTech = (updateObj) => new Promise((resolve, reject) => {
+  axios
+    .patch(`${baseURL}/tech/${updateObj.firebaseKey}.json`, updateObj)
+    .then(() => getTech().then(resolve))
+    .catch(reject);
+});
+
+const deleteTech = (fbKey) => new Promise((resolve, reject) => {
+  axios
+    .delete(`${baseURL}/tech/${fbKey}.json`)
+    .then(() => getProjects().then(resolve))
+    .catch(reject);
+});
+
 export {
-  getProjects, createProject, createTech, getTech,
+  getProjects,
+  createProject,
+  createTech,
+  getTech,
+  getSingleProject,
+  updateProject,
+  deleteProject,
+  getSingleTech,
+  updateTech,
+  deleteTech,
 };

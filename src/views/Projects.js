@@ -21,8 +21,12 @@ export default function Projects() {
         <>
           <h1 className="text-center">My Projects</h1>
           <div className="d-flex flex-wrap">
-            {projects.map((project) => (
-              <Project key={project.firebaseKey} project={project} />
+            {projects.map((obj) => (
+              <Project
+                key={obj.firebaseKey}
+                obj={obj}
+                setProjects={setProjects}
+              />
             ))}
           </div>
         </>

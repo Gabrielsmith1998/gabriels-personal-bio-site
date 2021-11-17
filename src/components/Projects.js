@@ -2,18 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, Container } from 'reactstrap';
 
-export default function Project({ project }) {
+export default function Project({ obj }) {
   return (
     <div>
       <Container className="project-card-container">
         <Card className="project-cards">
-          <p>{project.projectName}</p>
-          <p>{project.projectDescription}</p>
-          <a
-            href={project.projectLink}
-            target="_blank"
-            rel="noreferrer noopener"
-          >
+          <p>{obj.projectName}</p>
+          <p>{obj.projectDescription}</p>
+          <a href={obj.projectLink} target="_blank" rel="noreferrer noopener">
             Repo
           </a>
           <a
@@ -30,5 +26,5 @@ export default function Project({ project }) {
 }
 
 Project.propTypes = {
-  project: PropTypes.shape(PropTypes.obj).isRequired,
+  obj: PropTypes.shape(PropTypes.obj).isRequired,
 };

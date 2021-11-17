@@ -23,11 +23,12 @@ export default function Edit({ user }) {
             <>
               <h1 className="tech-n-projects">My Projects</h1>
               <div className="d-flex flex-wrap">
-                {projects.map((project) => (
+                {projects.map((obj) => (
                   <EditProject
-                    key={project.firebaseKey}
-                    project={project}
+                    key={obj.firebaseKey}
+                    obj={obj}
                     user={user}
+                    setProjects={setProjects}
                   />
                 ))}
               </div>

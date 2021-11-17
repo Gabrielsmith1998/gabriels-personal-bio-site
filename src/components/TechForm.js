@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { createTech } from '../api/data/bioData';
+import { createTech, getSingleTech, updateTech } from '../api/data/bioData';
 
 const initialState = {
   techName: '',
@@ -9,17 +9,20 @@ const initialState = {
   techImg: '',
 };
 
-export default function TechForm({ TechObj, user }) {
+export default function TechForm({ user, technolo }) {
   const [formInput, setFormInput] = useState(initialState);
+  const { fbKey } = useParams();
   const history = useHistory();
 
   useEffect(() => {
-    if (TechObj.firebaseKey) {
-      setFormInput(TechObj);
+    if (technolo.firebaseKey) {
+      getSingleTech(fbKey).then(() => {
+        setFormInput(technolo);
+      });
     } else {
       setFormInput(initialState);
     }
-  }, [TechObj]);
+  }, [technolo]);
 
   const handleChange = (e) => {
     setFormInput((prevState) => ({
@@ -41,11 +44,17 @@ export default function TechForm({ TechObj, user }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    createTech(formInput).then(() => {
-      resetForm();
-      history.push('/');
-    });
+    if (fbKey) {
+      updateTech(formInput).then(() => {
+        resetForm();
+        history.push('/editTech');
+      });
+    } else {
+      createTech(formInput).then(() => {
+        resetForm();
+        history.push('/');
+      });
+    }
   };
 
   return (
@@ -87,11 +96,11 @@ export default function TechForm({ TechObj, user }) {
 }
 
 TechForm.propTypes = {
-  TechObj: PropTypes.shape(PropTypes.obj),
   user: PropTypes.shape(PropTypes.obj),
+  technolo: PropTypes.shape(PropTypes.obj),
 };
 
 TechForm.defaultProps = {
-  TechObj: {},
   user: null,
+  technolo: {},
 };

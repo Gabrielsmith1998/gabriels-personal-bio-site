@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { createProject } from '../api/data/bioData';
+import {
+  createProject,
+  getSingleProject,
+  updateProject,
+} from '../api/data/bioData';
 
 const initialState = {
   projectName: '',
@@ -10,17 +14,20 @@ const initialState = {
   projectLink: '',
 };
 
-export default function ProjectForm({ projObj, user }) {
+export default function ProjectForm({ user, obj }) {
   const [formInput, setFormInput] = useState(initialState);
+  const { fbKey } = useParams();
   const history = useHistory();
 
   useEffect(() => {
-    if (projObj.firebaseKey) {
-      setFormInput(projObj);
+    if (obj.firebaseKey) {
+      getSingleProject(fbKey).then(() => {
+        setFormInput(obj);
+      });
     } else {
       setFormInput(initialState);
     }
-  }, [projObj]);
+  }, [obj]);
 
   const handleChange = (e) => {
     setFormInput((prevState) => ({
@@ -49,11 +56,17 @@ export default function ProjectForm({ projObj, user }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    createProject(formInput).then(() => {
-      resetForm();
-      history.push('/');
-    });
+    if (fbKey) {
+      updateProject(formInput).then(() => {
+        resetForm();
+        history.push('/');
+      });
+    } else {
+      createProject(formInput).then(() => {
+        resetForm();
+        history.push('/');
+      });
+    }
   };
 
   return (
@@ -106,11 +119,11 @@ export default function ProjectForm({ projObj, user }) {
 }
 
 ProjectForm.propTypes = {
-  projObj: PropTypes.shape(PropTypes.obj),
   user: PropTypes.shape(PropTypes.obj),
+  obj: PropTypes.shape(PropTypes.obj),
 };
 
 ProjectForm.defaultProps = {
-  projObj: {},
   user: null,
+  obj: {},
 };

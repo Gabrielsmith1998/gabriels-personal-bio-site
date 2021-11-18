@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Carousel from 'react-elastic-carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { getProjects, getTech } from '../api/data/bioData';
 import Project from '../components/Projects';
@@ -37,7 +38,7 @@ export default function Home() {
   });
 
   return (
-    <div className="tech-n-projects">
+    <div>
       <div className="about-me">
         <p className="bio">
           About Me <br />
@@ -58,15 +59,15 @@ export default function Home() {
           className="img-fluid"
         />
       </div>
-      <div>
+      <div className="tech-n-projects">
         {projects ? (
           <>
             <div
-              className="tech-n-shi"
+              className="tech-n-projects"
               style={{ transform: `translateY(${offsetY * 0.2}px)` }}
             >
               <h1>My Projects</h1>
-              <div className="d-flex flex-wrap">
+              <Carousel className="project-carousel">
                 {projects.map((obj) => (
                   <Project
                     key={obj.firebaseKey}
@@ -74,21 +75,30 @@ export default function Home() {
                     setProjects={setProjects}
                   />
                 ))}
-              </div>
+              </Carousel>
             </div>
           </>
         ) : (
           ''
         )}
+      </div>
+      <div className="teched">
         {tech ? (
           <>
-            <div style={{ transform: `translateY(${offsetY * 0.2}px)` }}>
+            <div
+              style={{ transform: `translateY(${offsetY * 0.2}px)` }}
+              className="teched"
+            >
               <h1>My Tech</h1>
-              <div className="d-flex flex-wrap">
+              <Carousel className="Carousel">
                 {tech.map((technolo) => (
-                  <Tech key={technolo.firebaseKey} technolo={technolo} />
+                  <Tech
+                    key={technolo.firebaseKey}
+                    technolo={technolo}
+                    setProjects={setProjects}
+                  />
                 ))}
-              </div>
+              </Carousel>
             </div>
           </>
         ) : (

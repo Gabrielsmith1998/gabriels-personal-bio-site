@@ -18,7 +18,7 @@ function Initialize() {
           isAdmin: authed.uid === 'mOjAp1n9OfXc99eBOZk3znU8ha72',
         };
         setUser(userObj);
-      } else if (user || user === null) {
+      } else {
         setUser(false);
       }
     });

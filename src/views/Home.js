@@ -66,7 +66,15 @@ export default function Home() {
               className="tech-n-projects"
               style={{ transform: `translateY(${offsetY * 0.2}px)` }}
             >
-              <h1>My Projects</h1>
+              <h1 className="project-header">
+                My <br />
+                Projects
+              </h1>
+              <img
+                className="gabrielS"
+                src="https://i.ibb.co/tb2Zg7L/image0.jpg"
+                alt="Gabriel Smith"
+              />
               <Carousel className="project-carousel">
                 {projects.map((obj) => (
                   <Project
@@ -89,7 +97,10 @@ export default function Home() {
               style={{ transform: `translateY(${offsetY * 0.2}px)` }}
               className="teched"
             >
-              <h1>My Tech</h1>
+              <h1 className="tech-header">
+                My <br />
+                Tech
+              </h1>
               <Carousel className="Carousel">
                 {tech.map((technolo) => (
                   <Tech

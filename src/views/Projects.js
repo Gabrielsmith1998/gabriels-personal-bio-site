@@ -19,15 +19,17 @@ export default function Projects() {
     <div>
       {projects ? (
         <>
-          <h1 className="tech-n-projects">My Projects</h1>
-          <div className="d-flex flex-wrap">
-            {projects.map((obj) => (
-              <Project
-                key={obj.firebaseKey}
-                obj={obj}
-                setProjects={setProjects}
-              />
-            ))}
+          <h1 className="text-center">My Projects</h1>
+          <div className="tech-n-projects">
+            <div className="d-flex flex-wrap">
+              {projects.map((obj) => (
+                <Project
+                  key={obj.firebaseKey}
+                  obj={obj}
+                  setProjects={setProjects}
+                />
+              ))}
+            </div>
           </div>
         </>
       ) : (

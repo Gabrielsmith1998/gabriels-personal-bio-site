@@ -48,25 +48,21 @@ const NavTwo = ({ user }) => {
                   Contact
                 </NavLink>
               </NavItem>
-              {user ? (
-                <button
-                  type="button"
-                  className="btn btn-danger"
-                  onClick={signOutUser}
-                >
-                  Sign Out
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  className="btn btn-info"
-                  onClick={signInUser}
-                >
-                  Sign In
-                </button>
-              )}
             </>
           </Nav>
+          {user ? (
+            <button
+              type="button"
+              className="btn btn-danger"
+              onClick={signOutUser}
+            >
+              Sign Out
+            </button>
+          ) : (
+            <button type="button" className="btn btn-info" onClick={signInUser}>
+              Sign In
+            </button>
+          )}
         </Collapse>
       </Navbar>
     </div>
@@ -77,6 +73,6 @@ NavTwo.propTypes = {
   user: PropTypes.shape(PropTypes.obj),
 };
 
-NavTwo.defaultProps = { user: null };
+NavTwo.defaultProps = { user: {} };
 
 export default NavTwo;

@@ -5,8 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
 
 body {
-  background-image: url('https://www.imgonline.com.ua/result_img/imgonline-com-ua-TextureSeamless-ZDJVlScPjsnuks.jpg');
-  background-size: cover;
+  background-image: url('https://i.ibb.co/0mjDQM2/imgonline-com-ua-Texture-Seamless-wm-Lbulwv-A8iy.jpg');
   background-repeat: repeat;
 }
 
@@ -15,7 +14,7 @@ body {
   align-items: center;
   justify-content: center;
   color: white;
-  background-color: rgba(250, 171, 248, 0.632);
+  background-color: rgba(54, 204, 250, 0.632);
   font-family: 'Titillium Web', sans-serif;
 
    .bio {
@@ -31,7 +30,6 @@ body {
   background-image: url('https://www.macmillandictionary.com/external/slideshow/full/White_full.png');
   background-size: cover;
   background-repeat: repeat;
-  margin-bottom: 50px;
   
   .project-cards {
     margin: 10px;
@@ -41,15 +39,47 @@ body {
     height: 200px;
     font-family: 'Oswald', sans-serif;
     -webkit-text-stroke: 1px white;
+
+    .project-img  {
+      width: 50px !important;
+      height: 50px !important;
+    }
   }
+}
+
+.project-carousel {
+ .project-img {
+   width: 200px;
+   height: 200px;
+ }
 }
 
 .tech-n-projects {
   font-family: 'Oswald', sans-serif;
+  color: rgb(237, 103, 45);
+  -webkit-text-stroke: 1px rgb(255, 0, 0);
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  background-size: cover;
+
+  .project-img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .project-cards {
+    margin: 10px;
+  }
+}
+
+.teched {
+  margin-top: 50px;
+  font-family: 'Oswald', sans-serif;
   -webkit-text-stroke: 1px white;
   color: #344330;
   text-align: center;
-  background-color: rgba(191, 252, 173, 0.577);
+  background-color: rgb(255, 226, 251);
+  background-size: cover;
 }
 
 .flex-wrap {
@@ -64,12 +94,17 @@ body {
   .navbar {
     display: flex;
     flex-wrap: wrap;
-    background-color: rgb(236, 255, 198);
+    background-color: rgba(250, 250, 250, 0.831);
     font-family: 'Roboto', sans-serif;
 
     .navColor {
       margin-left: 5px;
+      color: rgb(237, 103, 45) !important;
+      -webkit-text-stroke: 1px rgb(255, 0, 0);
       font-family: 'Oswald', sans-serif;
-      -webkit-text-stroke: 1px white;
     }
+  }
+
+  .sign-out {
+    float: right;
   }

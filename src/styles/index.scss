@@ -1,8 +1,9 @@
 @import '~@fortawesome/fontawesome-free/css/all.min.css';
 @import 'globals';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@900&display=swap');
 
 body {
   background-image: url('https://i.ibb.co/0mjDQM2/imgonline-com-ua-Texture-Seamless-wm-Lbulwv-A8iy.jpg');
@@ -57,10 +58,11 @@ body {
 .tech-n-projects {
   font-family: 'Oswald', sans-serif;
   color: rgb(237, 103, 45);
-  -webkit-text-stroke: 1px rgb(255, 0, 0);
-  background-color: rgb(255, 255, 255);
+  -webkit-text-stroke: white;
+  background-color: rgb(234, 254, 224);
   text-align: center;
   background-size: cover;
+  position: relative;
 
   .project-img {
     width: 200px;
@@ -70,16 +72,39 @@ body {
   .project-cards {
     margin: 10px;
   }
+
+  .project-header {
+    float: left;
+    margin: 30px;
+    text-align: left;
+    font-size: 80px;
+  }
+
+  .gabrielS {
+    width: 300px;
+    height: 340px;
+    float: right;
+    margin-right: 50px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    border-radius: 25px;
+  }
 }
 
 .teched {
   margin-top: 50px;
   font-family: 'Oswald', sans-serif;
-  -webkit-text-stroke: 1px white;
-  color: #344330;
+  color: #52b9f0;
   text-align: center;
-  background-color: rgb(255, 226, 251);
+  background-color: rgba(255, 226, 251, 0.817);
   background-size: cover;
+
+  .tech-header {
+    float: left;
+    margin: 30px;
+    text-align: left;
+    font-size: 80px;
+  }
 }
 
 .flex-wrap {
@@ -95,13 +120,10 @@ body {
     display: flex;
     flex-wrap: wrap;
     background-color: rgba(250, 250, 250, 0.831);
-    font-family: 'Roboto', sans-serif;
 
     .navColor {
       margin-left: 5px;
-      color: rgb(237, 103, 45) !important;
-      -webkit-text-stroke: 1px rgb(255, 0, 0);
-      font-family: 'Oswald', sans-serif;
+      font-family: 'Nunito Sans', sans-serif;
     }
   }
 

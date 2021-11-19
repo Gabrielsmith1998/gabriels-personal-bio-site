@@ -35,8 +35,7 @@ body {
   .project-cards {
     margin: 10px;
     text-align: center;
-    background: rgba(179, 244, 198, 0.653);
-    width: 200px;
+    width: 400px;
     height: 200px;
     font-family: 'Oswald', sans-serif;
     -webkit-text-stroke: 1px white;
@@ -65,7 +64,7 @@ body {
   position: relative;
 
   .project-img {
-    width: 200px;
+    width: 400px;
     height: 200px;
   }
 
@@ -75,16 +74,18 @@ body {
 
   .project-header {
     float: left;
-    margin: 30px;
+    margin: 50px;
     text-align: left;
-    font-size: 80px;
+    font-size: 150px;
+    font-family: 'StarBoy';
   }
 
-  .gabrielS {
-    width: 300px;
-    height: 340px;
+
+  .gabrielHoney {
     float: right;
-    margin-right: 50px;
+    width: 340px;
+    height: 340px;
+    margin-right: 100px;
     margin-bottom: 10px;
     margin-top: 20px;
     border-radius: 25px;
@@ -96,14 +97,26 @@ body {
   font-family: 'Oswald', sans-serif;
   color: #52b9f0;
   text-align: center;
-  background-color: rgba(255, 226, 251, 0.817);
   background-size: cover;
+  background-color: rgb(255, 241, 196);
 
   .tech-header {
     float: left;
-    margin: 30px;
+    margin: 50px;
     text-align: left;
-    font-size: 80px;
+    font-size: 250px;
+    width: 300px;
+    font-family: 'StarBoy';
+  }
+
+  .gabrielS {
+    width: 300px;
+    height: 340px;
+    float: right;
+    margin-right: 50px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    border-radius: 25px;
   }
 }
 
@@ -124,6 +137,13 @@ body {
     .navColor {
       margin-left: 5px;
       font-family: 'Nunito Sans', sans-serif;
+    }
+
+    .nav-title {
+      font-family: "StarBoy";
+      margin-left: 10px;
+      font-size: 30px;
+      color: rgb(143, 228, 254) !important;
     }
   }
 

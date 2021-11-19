@@ -1,1 +1,7 @@
 @import 'variables';
+
+@font-face {
+    font-family: "StarBoy";
+    src: local("StarBoy"), url("../../api/assets/StarBoy.TTF") format("truetype");
+    font-weight: bold;
+}

@@ -10,6 +10,7 @@ import {
   NavLink,
 } from 'reactstrap';
 import { signInUser, signOutUser } from '../api/auth';
+import '../api/assets/gsNav.png';
 
 const NavTwo = ({ user }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,8 +20,8 @@ const NavTwo = ({ user }) => {
   return (
     <div className="SignInNOut">
       <Navbar className="navbar" light expand="md">
-        <NavbarBrand className="navColor" href="/">
-          Gabriels Personal Bio Site
+        <NavbarBrand className="nav-title" href="/">
+          Gabriel Smith
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>

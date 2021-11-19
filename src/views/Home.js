@@ -71,8 +71,8 @@ export default function Home() {
                 Projects
               </h1>
               <img
-                className="gabrielS"
-                src="https://i.ibb.co/tb2Zg7L/image0.jpg"
+                className="gabrielHoney"
+                src="https://i.ibb.co/VNSLf86/IMG-3009.jpg"
                 alt="Gabriel Smith"
               />
               <Carousel className="project-carousel">

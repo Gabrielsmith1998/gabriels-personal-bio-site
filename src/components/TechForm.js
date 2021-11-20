@@ -22,7 +22,7 @@ export default function TechForm({ user, technolo }) {
     } else {
       setFormInput(initialState);
     }
-  }, [technolo]);
+  }, []);
 
   const handleChange = (e) => {
     setFormInput((prevState) => ({

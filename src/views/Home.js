@@ -64,7 +64,7 @@ export default function Home() {
           <>
             <div
               className="tech-n-projects"
-              style={{ transform: `translateY(${offsetY * 0.2}px)` }}
+              style={{ transform: `translateY(${offsetY * 0.15}px)` }}
             >
               <h1 className="project-header">
                 My <br />
@@ -94,7 +94,7 @@ export default function Home() {
         {tech ? (
           <>
             <div
-              style={{ transform: `translateY(${offsetY * 0.2}px)` }}
+              style={{ transform: `translateY(${offsetY * 0.15}px)` }}
               className="teched"
             >
               <h1 className="tech-header">

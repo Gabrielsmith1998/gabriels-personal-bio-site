@@ -26,6 +26,7 @@ const initialState = {
   projectDescription: '',
   projectImg: '',
   projectLink: '',
+  deployedLink: '',
 };
 
 export default function ProjectForm({ user, obj }) {
@@ -49,7 +50,7 @@ export default function ProjectForm({ user, obj }) {
     } else {
       setFormInput(initialState);
     }
-  }, [obj]);
+  }, []);
 
   const handleImage = (e) => {
     setImageState(e.target.files[0]);
@@ -69,10 +70,17 @@ export default function ProjectForm({ user, obj }) {
     }));
   };
 
-  const handleLink = (e) => {
+  const repoLink = (e) => {
     setFormInput((prevState) => ({
       ...prevState,
       projectLink: e.target.value,
+    }));
+  };
+
+  const deployedLink = (e) => {
+    setFormInput((prevState) => ({
+      ...prevState,
+      deployedLink: e.target.value,
     }));
   };
 
@@ -113,7 +121,7 @@ export default function ProjectForm({ user, obj }) {
         <div>
           <div>
             <img
-              className="create-post-image"
+              className="create-project-image"
               src={
                 imageState
                   ? URL.createObjectURL(imageState)
@@ -146,10 +154,21 @@ export default function ProjectForm({ user, obj }) {
               <input
                 type="text"
                 className="form-control"
-                placeholder="Link To Project"
+                placeholder="Link To Project Repo"
                 name="link"
                 value={formInput.projectLink}
-                onChange={handleLink}
+                onChange={repoLink}
+                required
+              />
+            </div>
+            <div className="m-3">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Link To Deployed Site"
+                name="link"
+                value={formInput.deployedLink}
+                onChange={deployedLink}
                 required
               />
             </div>

@@ -19,7 +19,7 @@ export default function Project({ obj }) {
         <p>{obj.projectName}</p>
         <p>{obj.projectDescription}</p>
         <button type="button" className="btn btn-info" onClick={toggleDetails}>
-          Project Details
+          Project Links
         </button>
         {details && (
           <div>

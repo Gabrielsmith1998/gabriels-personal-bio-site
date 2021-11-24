@@ -35,8 +35,8 @@ body {
   .project-cards {
     margin: 10px;
     text-align: center;
-    width: 400px;
-    height: 200px;
+    width: 400px !important;
+    height: 200px !important;
     font-family: 'Oswald', sans-serif;
     -webkit-text-stroke: 1px white;
 
@@ -64,12 +64,15 @@ body {
   position: relative;
 
   .project-img {
-    width: 400px;
-    height: 200px;
+    max-width: 300px;
+    max-height: 200px;
   }
 
   .project-cards {
     margin: 10px;
+    width: 400px !important;
+    height: 400px !important;
+    align-items: center;
   }
 
   .project-header {
@@ -109,6 +112,16 @@ body {
     font-family: 'StarBoy';
   }
 
+  .tech-cards {
+    width: 300px !important;
+    height: 400px !important;
+    align-items: center;
+  }
+
+  .tech-img {
+    max-width: 200px;
+    max-height: 200px;
+  }
   .gabrielS {
     width: 300px;
     height: 340px;
@@ -164,5 +177,9 @@ body {
   .contact-links {
     font-family: 'Roboto', sans-serif;
     font-size: 30px;
+  }
+
+  .msg {
+    height: 150px;
   }
 }

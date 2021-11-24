@@ -45,6 +45,11 @@ const NavTwo = ({ user }) => {
                 </NavLink>
               </NavItem>
               <NavItem>
+                <NavLink href="/tech" className="navColor">
+                  Technologies
+                </NavLink>
+              </NavItem>
+              <NavItem>
                 <NavLink href="/contact" className="navColor">
                   Contact
                 </NavLink>

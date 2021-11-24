@@ -1,7 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
+import firebase from 'firebase/app';
 import PropTypes from 'prop-types';
-import { createTech, getSingleTech, updateTech } from '../api/data/bioData';
+import {
+  createTech,
+  getProjects,
+  getSingleTech,
+  updateTech,
+} from '../api/data/bioData';
+
+const uploadFile = (file, locationPath = '/') => new Promise((resolve, reject) => {
+  const storageRef = firebase.storage().ref();
+  const uploadTask = storageRef.child(`${locationPath}`).put(file);
+
+  uploadTask.on('state_changed', {
+    error: reject,
+    complete: () => {
+      uploadTask.snapshot.ref.getDownloadURL().then(resolve);
+    },
+  });
+});
 
 const initialState = {
   techName: '',
@@ -10,9 +28,17 @@ const initialState = {
 };
 
 export default function TechForm({ user, technolo }) {
+  const [allImages, setAllImages] = useState([]);
+  const [imageState, setImageState] = useState(null);
   const [formInput, setFormInput] = useState(initialState);
   const { fbKey } = useParams();
   const history = useHistory();
+
+  const updateImages = () => {
+    getProjects().then((images) => {
+      setAllImages(images);
+    });
+  };
 
   useEffect(() => {
     if (technolo.firebaseKey) {
@@ -23,6 +49,10 @@ export default function TechForm({ user, technolo }) {
       setFormInput(initialState);
     }
   }, []);
+
+  const handleImage = (e) => {
+    setImageState(e.target.files[0]);
+  };
 
   const handleChange = (e) => {
     setFormInput((prevState) => ({
@@ -50,10 +80,20 @@ export default function TechForm({ user, technolo }) {
         history.push('/editTech');
       });
     } else {
-      createTech(formInput).then(() => {
-        resetForm();
-        history.push('/');
-      });
+      uploadFile(imageState, `${user.uid}/tech/images/${new Date().getTime()}`)
+        .then((imageUrl) => {
+          createTech({
+            ...formInput,
+            techImg: imageUrl,
+          });
+        })
+        .then(() => {
+          updateImages(allImages);
+        })
+        .then(() => {
+          resetForm();
+          history.push('/');
+        });
     }
   };
 
@@ -61,6 +101,23 @@ export default function TechForm({ user, technolo }) {
     <>
       {user?.isAdmin && (
         <form onSubmit={handleSubmit}>
+          <img
+            className="create-project-image"
+            src={
+              imageState
+                ? URL.createObjectURL(imageState)
+                : formInput.projectImg
+                  || 'https://www.pacifictrellisfruit.com/wp-content/uploads/2016/04/default-placeholder-300x300.png'
+            }
+            onChange={handleImage}
+            alt="new"
+          />
+          <input
+            onChange={handleImage}
+            type="file"
+            value={user.techImg}
+            accept="image/*"
+          />
           <div className="m-3">
             <input
               type="text"

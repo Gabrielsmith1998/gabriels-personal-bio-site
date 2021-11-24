@@ -75,7 +75,7 @@ export default function Contact() {
             <div className="col-8 form group pt-2 mx-auto">
               <input
                 type="text"
-                className="form-control"
+                className="form-control msg"
                 placeholder="Your message"
                 name="message"
               />

@@ -12,6 +12,7 @@ import TechUpdate from '../views/TechUpdate';
 // import ProjectForm from '../components/ProjectForm';
 import EditForm from '../views/EditForm';
 import TechEditForm from '../views/TechEditForm';
+import Technologies from '../views/Technologies';
 
 export default function Router({ user }) {
   return (
@@ -22,6 +23,9 @@ export default function Router({ user }) {
         </Route>
         <Route exact path="/projects">
           <Projects />
+        </Route>
+        <Route exact path="/tech">
+          <Technologies />
         </Route>
         <Route exact path="/contact">
           <Contact />

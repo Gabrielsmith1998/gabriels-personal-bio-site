@@ -19,8 +19,8 @@ export default function Projects() {
     <div>
       {projects ? (
         <>
-          <h1 className="text-center">My Projects</h1>
           <div className="tech-n-projects">
+            <h1 className="text-center">My Projects</h1>
             <div className="d-flex flex-wrap">
               {projects.map((obj) => (
                 <Project

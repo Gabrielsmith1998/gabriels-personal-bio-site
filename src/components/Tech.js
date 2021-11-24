@@ -7,6 +7,7 @@ export default function Tech({ technolo }) {
     <div>
       <Container className="project-card-container">
         <Card className="project-cards">
+          <img className="project-img" src={technolo.techImg} alt="tech" />
           <p>{technolo.techName}</p>
           <p>{technolo.techDescription}</p>
         </Card>

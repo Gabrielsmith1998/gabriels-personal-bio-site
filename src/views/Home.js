@@ -25,7 +25,7 @@ export default function Home() {
     return () => {
       isMounted = false;
     };
-  });
+  }, []);
 
   useEffect(() => {
     let isMounted = true;
@@ -35,7 +35,7 @@ export default function Home() {
     return () => {
       isMounted = false;
     };
-  });
+  }, []);
 
   return (
     <div>

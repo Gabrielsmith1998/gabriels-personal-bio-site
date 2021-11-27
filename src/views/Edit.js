@@ -14,7 +14,7 @@ export default function Edit({ user }) {
     return () => {
       isMounted = false;
     };
-  });
+  }, []);
   return (
     <div>
       {user?.isAdmin && (

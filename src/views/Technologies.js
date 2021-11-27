@@ -13,7 +13,7 @@ export default function Technologies() {
     return () => {
       isMounted = false;
     };
-  });
+  }, []);
 
   return (
     <div>

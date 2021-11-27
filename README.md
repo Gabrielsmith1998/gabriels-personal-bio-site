@@ -7,7 +7,7 @@
 
 ## [Personal Bio ERD](https://user-images.githubusercontent.com/86996271/143664252-846cafe2-59b4-4977-9261-923189e26490.png)
 
-## [Flow Chart]![Bio Flowchart](https://user-images.githubusercontent.com/86996271/143665341-e1cdc3bd-e85d-4405-a666-9a68c4a3d9e7.png)
+## ![Bio Flowchart](https://user-images.githubusercontent.com/86996271/143665341-e1cdc3bd-e85d-4405-a666-9a68c4a3d9e7.png)
 
 
 # Personal Bio Site: Authentication and Routing

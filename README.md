@@ -1,82 +1,48 @@
-# React Template
-[![Netlify Status](https://api.netlify.com/api/v1/badges/339c4ae9-fc7f-41b4-9b49-2dab0a20eaba/deploy-status)](https://app.netlify.com/sites/react-template-21/deploys)
+# Gabriels Personal Bio Site
 
-[See Live Demo of this Template](https://react-template-21.netlify.app/)
 
-This template includes all the dependencies and set up needed for you to work within defined code standards and structure to get you up and running quickly.
+> The user could be an organization or recruiter attempting to learn more about me and my abilities when looking for a position to fill.
 
-## Topics
-- [Get Started](#get-started)
-- [Starting the Project](#starting-the-project)
-- [Other important tidbits](#other-important-tidbits)
-    - [React Dev Tools](#react-dev-tools)
-    - [Using axios](#using-axios)
-    - [Deploying on Netlify](#deploying-on-netlify)
-___
+### [Deployed App](https://gabriel-smith-bio-site.netlify.app)
 
-## Get Started
-### Use Template
-#### 1. To get started, click the GREEN "Use this Template" button at the top of the repo
-![Use this Template](./documentation/usetemplate.png)
+## Data![Personal Bio ERD](https://user-images.githubusercontent.com/86996271/143664252-846cafe2-59b4-4977-9261-923189e26490.png)
 
-#### 2. Make sure YOUR github account is selected in the dropdown and name your project
-![Create Project](./documentation/createproject.png)
+# Personal Bio Site: Authentication and Routing
 
-3. Clone your new repo to your local machine
-4. Go to the **NEXT** section
+## User Stories - Authentication
 
-## Starting the Project
-1. Open the `package.json` file and change the `name` property to the name of your application, and `author` to  your name
-1. Open the `/public/index.html` file and change the `title` attribute to the name of your application
-1. Rename the `.env.local.sample` file to `.env.local` file. The final file name should be `.env.local`
-1. From your command line, be in the root directory and run `npm install` OR `npm i` for short
-1. From your command line, be in the root directory and run `npx husky install`
-1. To start your application, run `npm start`
+* As a user, if I go to the application and I am not logged in, I should see the application with a google authentication button in the NavBar.
+* As a user, I should be able to authenticate via google.
+* As a user, I should always see a navbar.
+* As a user, when I am logged in/out, the navbar should only display Home, Projects, Technology.
+* As a Admin user, when I am logged in, the navbar should still display Home, Projects, Technology as well devPortal which allows me as admin to CRUD.
+* As a user, when I click the logout button in the navbar I should be logged out and should see the login button in the NavBar.
 
-### If you see this, you are set to go!
-![LIT](./documentation/lit-screen.png)
+## User Stories - Routing
+* As a user if I click the home link in the navbar, I should navigate to '/home' which displays the about me description as well as my projects..
+* As a user if I click the Project link in the navbar, I should navigate to '/projects'  which will display all of my uploaded projects.
+* As a user if I click the Technologies link in the navbar, I should navigate to '/tech'  which displays all of my uploaded technology.
+* As a admin user if I click the Dev Portal link in the navbar, I should navigate to '/devPortal' which will bring up a view that allows me to crud on the applications projects and technologies.
 
-**NOTES:** 
-- Changes you make to the project will make the browser reload on save...no more hard refresh unless something goes wrong.
 
-## Other Important Tidbits
-### React Dev Tools
-From this time forward, you will be expected to have a clean console in order for your assignments to be approved. Use [React Developer Tools Chrome Extension](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) to help with debugging.
-### Including Images with React
-If you have a folder of local images that you want to load into your code things get a little strange with webpack.  Remember the only way webpack knows about assets is if they are imported into your javascript files.  Even our CSS is not added until those files are imported into our javascript files.  Below is some sample code for how to load a local image file into your project
+# React Hoarder Part 2: CRUD on Items
 
-```js
-import cat from './assets/cat.jpg';
+## Admin User Stories CRUD
+* As an Admin user, when I click devPortal in the navbar I will be shown 4 links. 2 that allow me to create projects and technologies as well as 2 more that allow me to edit and delete projects and technologies
 
-<>
-  <img src=${cat} alt="picture of a cat"/>
-</>
+### CREATE
+* As an admin user, when I click on Create Project or Create Tech, I should be navigated to /createProjects which will display a form for creation
 
-```
-### Using Axios
-> For every file you will need to make an API request in, you will need to import Axios
-```js
-import axios from 'axios';
+### READ
+* As a user, when I navigate to the /projects and /tech route, I should see a list of either my Projects or Technology displayed on the screen.
+* As a user, when I click on an item on the My Item page, I should be taken to the Single Item page and see details for that item
 
-const examplePromise = () => {
-  axios.get('http://localhost:3001/example')
-    .then((data) => {
-      console.warn(data);
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-});
-```
+### UPDATE
+* As an Admin user, when I click on the Edit Projects link in the devPortal, I should be redirected to the editProject page and should see a form pre-populated with all the information for the projects I am editing.  Once I make edits and push the save button, Firebase should edit and I should be redirected to the '/home' page.
 
-### Deploying on Netlify
+* As an Admin user, when I click on the Edit Tech link in the devPortal, I should be redirected to the editTech page and should see a form pre-populated with all the information for the tech I am editing.  Once I make edits and push the save button, Firebase should edit and I should be redirected to the '/home' page.
 
-- Build Command: `yarn build`
-- Publish directory: `build`
-- **Add Environmental Variables (NOT REQUIRED for Apps that do not use API Keys, etc)**
-    - Any Enviromental variables you are using in your `.env.local` file should be added to Netlify. 
-        - Go to Site settings > Build & deploy > Environment > Environment variables and the keys and values there.
-- **Update Firebase URL Settings**
-    - In Firebase under Authentication select sign in methods, scroll to Authorized domains. Add your Netlify URL.
-# Your own learning
-If you are interested in setting up your own project for things outside of class, you can run the command to start a React project `npx create-react-app {APP_NAME}` and setup all the files and structures from scratch.
+### DELETE
+* As an Admin user, when I click the Delete Projects link in the devPortal, there all my projects will be displayed with a delete button that when clicked will delete the project from the firebase database and redirect me back to the Home page
+
+* As an Admin user, when I click the Delete Tech link in the devPortal, there all my tech will be displayed with a delete button that when clicked will delete the tech from the firebase database and redirect me back to the Home page

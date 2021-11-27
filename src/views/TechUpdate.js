@@ -14,7 +14,7 @@ export default function TechUpdate({ user }) {
     return () => {
       isMounted = false;
     };
-  });
+  }, []);
   return (
     <div>
       {user?.isAdmin && (

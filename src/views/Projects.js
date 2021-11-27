@@ -13,7 +13,7 @@ export default function Projects() {
     return () => {
       isMounted = false;
     };
-  });
+  }, []);
 
   return (
     <div>

@@ -25,7 +25,7 @@
 * As a admin user if I click the Dev Portal link in the navbar, I should navigate to '/devPortal' which will bring up a view that allows me to crud on the applications projects and technologies.
 
 
-# React Hoarder Part 2: CRUD on Items
+# Gabriels Personal Bio Site: CRUD on Items
 
 ## Admin User Stories CRUD
 * As an Admin user, when I click devPortal in the navbar I will be shown 4 links. 2 that allow me to create projects and technologies as well as 2 more that allow me to edit and delete projects and technologies

@@ -5,7 +5,7 @@
 
 ### [Deployed App](https://gabriel-smith-bio-site.netlify.app)
 
-##[Personal Bio ERD](https://user-images.githubusercontent.com/86996271/143664252-846cafe2-59b4-4977-9261-923189e26490.png)
+## [Personal Bio ERD](https://user-images.githubusercontent.com/86996271/143664252-846cafe2-59b4-4977-9261-923189e26490.png)
 
 # Personal Bio Site: Authentication and Routing
 

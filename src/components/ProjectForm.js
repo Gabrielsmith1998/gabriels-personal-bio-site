@@ -50,7 +50,7 @@ export default function ProjectForm({ user, obj }) {
     } else {
       setFormInput(initialState);
     }
-  }, []);
+  }, [obj]);
 
   const handleImage = (e) => {
     setImageState(e.target.files[0]);

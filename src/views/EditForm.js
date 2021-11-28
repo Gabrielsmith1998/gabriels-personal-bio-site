@@ -13,7 +13,7 @@ export default function EditForm({ user }) {
   }, []);
   return (
     <>
-      <h1 className="page-header">{fbKey}</h1>
+      <h1 className="page-header">Edit Projects</h1>
       <div className="form-container">
         <ProjectForm obj={editProject} user={user} />
       </div>

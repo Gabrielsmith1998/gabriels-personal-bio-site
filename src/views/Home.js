@@ -54,7 +54,7 @@ export default function Home() {
           <small>Team player who thrives in a team environment.</small> <br />
         </p>
         <img
-          src="https://i.ibb.co/txDYmVD/IMG-8799.png"
+          src="https://i.imgur.com/7ikA0eJ.png"
           alt="Gabriel Smith"
           className="img-fluid"
         />
@@ -72,7 +72,7 @@ export default function Home() {
               </h1>
               <img
                 className="gabrielHoney"
-                src="https://i.ibb.co/VNSLf86/IMG-3009.jpg"
+                src="https://i.imgur.com/8ezrnUI.jpg"
                 alt="Gabriel Smith"
               />
               <Carousel className="project-carousel">

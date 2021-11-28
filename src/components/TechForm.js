@@ -48,7 +48,7 @@ export default function TechForm({ user, technolo }) {
     } else {
       setFormInput(initialState);
     }
-  }, []);
+  }, [technolo]);
 
   const handleImage = (e) => {
     setImageState(e.target.files[0]);

@@ -4,16 +4,19 @@ import { Link } from 'react-router-dom';
 export default function CreatePortal() {
   return (
     <div>
-      <Link className="nav-link active" to="/createProjects">
+      <Link className="portal-link" to="/createProjects">
         Create Projects
       </Link>
-      <Link className="nav-link active" to="/createTech">
+      <br />
+      <Link className="portal-link" to="/createTech">
         Create Tech
       </Link>
-      <Link className="nav-link active" to="/editProjects">
+      <br />
+      <Link className="portal-link" to="/editProjects">
         Edit/Delete Projects
       </Link>
-      <Link className="nav-link active" to="/editTech">
+      <br />
+      <Link className="portal-link" to="/editTech">
         Edit/Delete Tech
       </Link>
     </div>

@@ -23,35 +23,29 @@ body {
    }
 }
 
-.container {
+.project-card-container {
   display: flex;
+  margin: 5px;
   color: black;
   justify-content: center;
   font-family: 'Roboto', sans-serif;
-  background-image: url('https://www.macmillandictionary.com/external/slideshow/full/White_full.png');
   background-size: cover;
   background-repeat: repeat;
   
   .project-cards {
+    background-color: rgba(163, 246, 255, 0.324);
     margin: 10px;
+    font-size: 0.7em;
     text-align: center;
     width: 400px !important;
     height: 200px !important;
     font-family: 'Oswald', sans-serif;
-    -webkit-text-stroke: 1px white;
 
     .project-img  {
-      width: 50px !important;
-      height: 50px !important;
+      width: 250px !important;
+      height: 200px !important;
     }
   }
-}
-
-.project-carousel {
- .project-img {
-   width: 200px;
-   height: 200px;
- }
 }
 
 .tech-n-projects {
@@ -116,6 +110,7 @@ body {
     width: 300px !important;
     height: 400px !important;
     align-items: center;
+    background-color: rgba(64, 224, 208, 0.201) !important;
   }
 
   .tech-img {
@@ -131,6 +126,39 @@ body {
     margin-top: 20px;
     border-radius: 25px;
   }
+}
+
+.tech-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px;
+  color: white;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  background-size: cover;
+  background-repeat: repeat;
+
+  .tech-cards {
+    background-color: rgba(153, 205, 50, 0.119);
+    margin: 10px;
+    align-items: center;
+    text-align: center;
+    width: 400px !important;
+    height: 200px !important;
+    font-family: 'Oswald', sans-serif;
+
+    .tech-img  {
+      margin-top: 10px;
+      width: 100px !important;
+      height: 70px !important;
+    }
+  }
+}
+
+.portal-link {
+  font-family: 'Oswald', sans-serif;
+  display: flex;
+  justify-content: center;
 }
 
 .flex-wrap {
@@ -174,6 +202,7 @@ body {
 }
 
 .contact-me {
+  text-align: center;
   .contact-links {
     font-family: 'Roboto', sans-serif;
     font-size: 30px;

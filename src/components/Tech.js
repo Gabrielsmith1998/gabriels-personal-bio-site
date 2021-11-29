@@ -5,9 +5,9 @@ import { Card, Container } from 'reactstrap';
 export default function Tech({ technolo }) {
   return (
     <div>
-      <Container className="project-card-container">
-        <Card className="project-cards">
-          <img className="project-img" src={technolo.techImg} alt="tech" />
+      <Container className="tech-card-container">
+        <Card className="tech-cards">
+          <img className="tech-img" src={technolo.techImg} alt="tech" />
           <p>{technolo.techName}</p>
           <p>{technolo.techDescription}</p>
         </Card>

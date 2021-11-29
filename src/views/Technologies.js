@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Container } from 'reactstrap';
 import { getTech } from '../api/data/bioData';
 import Tech from '../components/Tech';
 
@@ -19,7 +20,7 @@ export default function Technologies() {
     <div>
       {tech ? (
         <>
-          <div className="tech-n-projects">
+          <Container className="tech-card-container">
             <h1 className="text-center">My Tech</h1>
             <div className="d-flex flex-wrap">
               {tech.map((technolo) => (
@@ -30,7 +31,7 @@ export default function Technologies() {
                 />
               ))}
             </div>
-          </div>
+          </Container>
         </>
       ) : (
         ''

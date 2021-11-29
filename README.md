@@ -5,6 +5,8 @@
 
 ### [Deployed App](https://gabriel-smith-bio-site.netlify.app)
 
+## [Loom Video](https://www.loom.com/share/24236170218c461aae92420223094357)
+
 ## [Personal Bio ERD](https://user-images.githubusercontent.com/86996271/143664252-846cafe2-59b4-4977-9261-923189e26490.png)
 
 ## ![Bio Flowchart](https://user-images.githubusercontent.com/86996271/143665341-e1cdc3bd-e85d-4405-a666-9a68c4a3d9e7.png)

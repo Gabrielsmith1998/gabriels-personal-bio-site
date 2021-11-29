@@ -54,7 +54,7 @@ export default function Contact() {
           <h5>Email</h5>
           <p>gsmith102998@gmail.com</p>
           <br />
-
+          <h5>Shoot me a email!</h5>
           <form onSubmit={sendEmail}>
             <div className="col-8 form group mx-auto">
               <input

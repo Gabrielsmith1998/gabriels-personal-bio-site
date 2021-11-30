@@ -30,9 +30,11 @@ export default function Router({ user }) {
         <Route exact path="/contact">
           <Contact />
         </Route>
-        <Route exact path="/createPortal">
-          <CreatePortal />
-        </Route>
+        <Route
+          exact
+          path="/createPortal"
+          component={() => <CreatePortal user={user} />}
+        />
         <Route
           exact
           path="/editProjects"
